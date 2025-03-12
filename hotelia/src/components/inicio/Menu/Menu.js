@@ -10,9 +10,7 @@ export function Menu() {
                 <Nav className="me-auto">
                     <Link to="/Iniciosesion" className="btn btn-outline-info">Inicio de sesión</Link>
                     <Link to="/Registro" className="btn btn-outline-info">Registro</Link>
-                    <Link to="/Catalogo" className="btn btn-outline-info">Catalogo</Link>
-                    <Link to="/Metodopago" className="btn btn-outline-info">Metodo de pago</Link>
-
+                    <Link to="/Servicios" className="btn btn-outline-info">Servicios</Link>
                 </Nav>
             </Container>
         </Navbar>

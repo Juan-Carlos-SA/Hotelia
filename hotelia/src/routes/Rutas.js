@@ -3,9 +3,10 @@ import { Layout } from '../layouts'
 import { Home } from '../page/Home'
 import { Routes, Route } from 'react-router-dom';
 import { Iniciosesion } from '../page/iniciosesion/iniciosesion';
-import {Registro} from '../page/Registro'
+import {Registro} from '../page/Registro/Registro'
 import { Catalogo } from '../page/Catalogo';
 import { Metodopago } from '../page/Metodopago';
+import {Servicios} from '../page/Servicios/Servicios';
 
 export function Rutas() {
   const Layouts = (Layout, Page) => {
@@ -23,6 +24,7 @@ export function Rutas() {
       <Route path="/Registro" element={Layouts(Layout, Registro)} />
       <Route path="/Catalogo" element={Layouts(Layout, Catalogo)} />
       <Route path="/Metodopago" element={Layouts(Layout, Metodopago)} />
+      <Route path="/Servicios" element={Layouts(Layout, Servicios)} />
     </Routes>
   )
 }

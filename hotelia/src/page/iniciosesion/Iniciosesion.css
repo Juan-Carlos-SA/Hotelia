@@ -1,9 +1,12 @@
+.Title2{
+    margin-left: 50px;
+}
 .login-container {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-color: #ebdbbc;
+    background-color: #fff5e1;
 }
 
 .login-text {
@@ -14,7 +17,8 @@
 
 .login-text h2 {
     font-size: 4rem; 
-    margin: 4rem;
+    margin: 5rem;
+    margin-top: -50px;
 }
 
 .login-form {
