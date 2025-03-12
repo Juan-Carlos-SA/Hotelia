@@ -4,12 +4,18 @@
     align-items: center;
     height: 100vh;
     background-color: #f8f9fa;
+    gap: 2rem; /* Añade un espacio entre las cartas */
 }
 
 .catalogo-card {
-    width: 50%;
-    max-width: 600px; 
+    width: 50%; /* Ajusta el ancho según sea necesario */
+    max-width: 400px; /* Ajusta el ancho máximo según sea necesario */
     margin: 2rem;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     border-radius: 0.5rem;
+}
+
+.catalogo-card-img {
+    height: 300px; /* Ajusta la altura según sea necesario */
+    object-fit: cover; /* Ajusta la imagen para que cubra el área sin distorsión */
 }
