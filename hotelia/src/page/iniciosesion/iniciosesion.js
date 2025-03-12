@@ -23,7 +23,7 @@ export function Iniciosesion() {
                         <Link to="/catalogo">
                             <Button variant="primary" type="submit">Acceder</Button>
                         </Link>
-                        <Link to="/registro">
+                        <Link to="/Registro">
                             <Button variant="secondary">Registrarse</Button>
                         </Link>
                     </div>

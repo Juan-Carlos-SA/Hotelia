@@ -1,1 +1,1 @@
-export *from './Registro'
+export * from './Registro/Registro'
