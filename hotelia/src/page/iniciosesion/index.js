@@ -1,1 +1,1 @@
-export * from './iniciosesion'
+export * from './Iniciosesion'

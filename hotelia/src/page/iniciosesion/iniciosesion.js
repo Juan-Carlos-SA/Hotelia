@@ -1,25 +1,35 @@
 import React from 'react'
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
-import { Link } from 'react-router-dom'; 
+import { Link } from 'react-router-dom';
+import './Iniciosesion.css'; // Asegúrate de crear y ajustar este archivo CSS
 
-export function iniciosesion() {
+export function Iniciosesion() {
     return (
-        <Form>
-            <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
-                <Form.Label>Email </Form.Label>
-                <Form.Control type="email" placeholder="name@example.com" />
-            </Form.Group>
-            <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
-                <Form.Label>Contraseña</Form.Label>
-                <Form.Control as="textarea" rows={1} />
-            </Form.Group>
-            <Link to="/dashboard">
-                <Button variant="primary" type="submit">Acceder</Button> {/* Botón Acceder */}
-            </Link>
-            <Link to="/register">
-                <Button variant="secondary" className="ms-2">Registrarse</Button> {/* Botón Registrarse */}
-            </Link>
-        </Form>
+        <div className="login-container">
+            <div className="login-text">
+                <h2>INICIA SESIÓN</h2>
+            </div>
+            <div className="login-form">
+                <Form>
+                    <Form.Group className="mb-3" controlId="formBasicEmail">
+                        <Form.Label>Email</Form.Label>
+                        <Form.Control type="email" placeholder="Ingresa tu email" />
+                    </Form.Group>
+                    <Form.Group className="mb-3" controlId="formBasicPassword">
+                        <Form.Label>Contraseña</Form.Label>
+                        <Form.Control type="password" placeholder="Ingresa tu contraseña" />
+                    </Form.Group>
+                    <div className="d-flex justify-content-between">
+                        <Link to="/dashboard">
+                            <Button variant="primary" type="submit">Acceder</Button>
+                        </Link>
+                        <Link to="/registro">
+                            <Button variant="secondary">Registrarse</Button>
+                        </Link>
+                    </div>
+                </Form>
+            </div>
+        </div>
     )
 }

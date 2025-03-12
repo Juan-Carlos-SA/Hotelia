@@ -1,0 +1,40 @@
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #e4cd9e;
+}
+
+.login-text {
+    flex: 1;
+    text-align: left;
+    padding-right: 2rem;
+}
+
+.login-text h2 {
+    font-size: 4rem; 
+    margin: 4rem;
+}
+
+.login-form {
+    flex: 1;
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 2rem;
+    box-shadow: 0 0 10px rgba(20, 0, 0, 0.1);
+    width: 600px;
+    margin: 4rem;
+}
+
+.login-form .form-group {
+    margin-bottom: 1rem;
+}
+
+.login-form .btn {
+    width: 100%;
+}
+
+.login-form .d-flex {
+    justify-content: space-between;
+}
