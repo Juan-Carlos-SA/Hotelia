@@ -2,8 +2,7 @@ import React from 'react'
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import { Link } from 'react-router-dom';
-import './Iniciosesion.css'; // Asegúrate de crear y ajustar este archivo CSS
-
+import './Iniciosesion.css';
 export function Iniciosesion() {
     return (
         <div className="login-container">
@@ -21,7 +20,7 @@ export function Iniciosesion() {
                         <Form.Control type="password" placeholder="Ingresa tu contraseña" />
                     </Form.Group>
                     <div className="d-flex justify-content-between">
-                        <Link to="/dashboard">
+                        <Link to="/catalogo">
                             <Button variant="primary" type="submit">Acceder</Button>
                         </Link>
                         <Link to="/registro">
