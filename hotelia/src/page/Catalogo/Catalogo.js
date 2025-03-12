@@ -5,6 +5,7 @@ import cuarto1 from '../../img/cuarto1.png';
 import cuarto2 from '../../img/cuarto2.png';
 import cuarto3 from '../../img/cuarto3.png';
 import './Catalogo.css';
+import { Link } from 'react-router-dom';
 
 export function Catalogo() {
   return (
@@ -16,7 +17,9 @@ export function Catalogo() {
           <Card.Text>
             $4,500
           </Card.Text>
-          <Button variant="secondary">Reservar ahora</Button>
+          <Link to="/metodopago">
+            <Button variant="secondary">Reservar ahora</Button>
+          </Link>
         </Card.Body>
       </Card>
       <Card className="catalogo-card">
@@ -26,7 +29,9 @@ export function Catalogo() {
           <Card.Text>
             $3,000
           </Card.Text>
-          <Button variant="secondary">Reservar ahora</Button>
+          <Link to="/metodopago">
+            <Button variant="secondary">Reservar ahora</Button>
+          </Link>
         </Card.Body>
       </Card>
       <Card className="catalogo-card">
@@ -36,7 +41,9 @@ export function Catalogo() {
           <Card.Text>
             $6,000
           </Card.Text>
-          <Button variant="secondary">Reservar ahora</Button>
+          <Link to="/metodopago">
+            <Button variant="secondary">Reservar ahora</Button>
+          </Link>
         </Card.Body>
       </Card>
     </div>
