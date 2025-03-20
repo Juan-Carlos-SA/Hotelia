@@ -6,11 +6,12 @@ export function Menu() {
     return (
         <Navbar bg="primary" data-bs-theme="dark">
             <Container>
-                <Navbar.Brand as={Link} to="/">HOTELIA</Navbar.Brand>
+                <Navbar.Brand as={Link} to="/"> HOTELIA </Navbar.Brand>
                 <Nav className="me-auto">
-                    <Link to="/Iniciosesion" className="btn btn-outline-info">Inicio de sesión</Link>
-                    <Link to="/Registro" className="btn btn-outline-info">Registro</Link>
-                    <Link to="/Servicios" className="btn btn-outline-info">Servicios</Link>
+                    <Link to="/Iniciosesion" className="btn btn-outline-info"> Inicio de sesión </Link>
+                    <Link to="/Registro" className="btn btn-outline-info"> Registro </Link>
+                    <Link to="/Servicios" className="btn btn-outline-info"> Servicios </Link>
+                    <Link to="/Reservas" className="btn btn-outline-info Reserva"> Reservas </Link>
                 </Nav>
             </Container>
         </Navbar>

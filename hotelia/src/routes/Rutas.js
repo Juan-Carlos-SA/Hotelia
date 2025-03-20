@@ -7,6 +7,12 @@ import {Registro} from '../page/Registro/Registro'
 import { Catalogo } from '../page/Catalogo';
 import { Metodopago } from '../page/Metodopago';
 import {Servicios} from '../page/Servicios/Servicios';
+import {ProServicios} from '../page/Servicios/ProServicios/ProServicios';
+import {ProServicios1} from '../page/Servicios/ProServicios/ProServicios1';
+import {ProCatalogo1} from '../page/Catalogo/ProCatalogo/ProCatalogo1';
+import {ProCatalogo2} from '../page/Catalogo/ProCatalogo/ProCatalogo2';
+import {ProCatalogo3} from '../page/Catalogo/ProCatalogo/ProCatalogo3';
+import {Reservas} from '../Reservas/Reservas'
 
 export function Rutas() {
   const Layouts = (Layout, Page) => {
@@ -25,6 +31,12 @@ export function Rutas() {
       <Route path="/Catalogo" element={Layouts(Layout, Catalogo)} />
       <Route path="/Metodopago" element={Layouts(Layout, Metodopago)} />
       <Route path="/Servicios" element={Layouts(Layout, Servicios)} />
+      <Route path="/ProServicios" element={Layouts(Layout, ProServicios)} />
+      <Route path="/ProServicios1" element={Layouts(Layout, ProServicios1)} />
+      <Route path="/ProCatalogo1" element={Layouts(Layout, ProCatalogo1)} />
+      <Route path="/ProCatalogo2" element={Layouts(Layout, ProCatalogo2)} />
+      <Route path="/ProCatalogo3" element={Layouts(Layout, ProCatalogo3)} />
+      <Route path="/Reservas" element={Layouts(Layout, Reservas)} />
     </Routes>
   )
 }

@@ -8,7 +8,7 @@ export function Iniciosesion() {
     return (
         <div className="login-container">
             <div className="login-text">
-                <h2 className='Title2' >INICIA SESIÓN</h2>
+                <h2>INICIA SESIÓN</h2>
             </div>
             <div className="login-form">
                 <Form>

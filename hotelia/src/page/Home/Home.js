@@ -6,9 +6,8 @@ import './Home.css'
 
 export function Home() {
   return (
-  <div>
-  
-    <img className="img" src={holbox} alt="Holbox" width="840" />
+    <div>
+    <img className="img" src={holbox} alt="Holbox" width="833" />
     <div>
       <h1 className="Title"> ¡Bienvenidos a Hotelia! </h1>
       

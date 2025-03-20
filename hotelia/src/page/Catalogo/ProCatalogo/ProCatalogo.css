@@ -1,0 +1,38 @@
+.img1{
+    width: 50%;
+    height: 50%;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 0.5rem;box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.606);
+    margin-left: 100px;
+    margin-top: 50px;
+}
+.img1-1{
+    width: 54%;
+}
+.img1-4{
+    width: 48%;
+}
+.text-habitacion1{
+    font-weight: bold;
+    margin-left: -700px;
+    margin-top: 20px;
+    color: black;
+}
+.text-habitacion1-2{
+    font-weight: bold;
+    margin-left: -710px;
+    margin-top: 20px;
+    color: black;
+}
+.text-habitacion1-3{
+    font-weight: bold;
+    margin-left: -650px;
+    margin-top: 20px;
+    color: black;
+}
+.back1-button1{
+    margin-left: 1500px;
+    font-size: 25px;
+}

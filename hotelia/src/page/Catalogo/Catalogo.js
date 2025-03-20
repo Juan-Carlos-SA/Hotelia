@@ -1,11 +1,12 @@
 import React from 'react'
 import Card from 'react-bootstrap/Card';
-import Button from 'react-bootstrap/Button';
 import cuarto1 from '../../img/cuarto1.png';
 import cuarto2 from '../../img/cuarto2.png';
 import cuarto3 from '../../img/cuarto3.png';
-import './Catalogo.css';
 import { Link } from 'react-router-dom';
+import {Button} from 'react-bootstrap';
+import './Catalogo.css';
+
 
 export function Catalogo() {
   return (
@@ -17,8 +18,8 @@ export function Catalogo() {
           <Card.Text>
             $4,500
           </Card.Text>
-          <Link to="/metodopago">
-            <Button variant="secondary">Reservar ahora</Button>
+          <Link to="/ProCatalogo1">
+            <Button variant="secondary"> ¡Ver más! </Button>
           </Link>
         </Card.Body>
       </Card>
@@ -27,10 +28,10 @@ export function Catalogo() {
         <Card.Body>
           <Card.Title>Cabaña</Card.Title>
           <Card.Text>
-            $3,000
+            $18,000
           </Card.Text>
-          <Link to="/metodopago">
-            <Button variant="secondary">Reservar ahora</Button>
+          <Link to="/ProCatalogo2">
+            <Button variant="secondary"> ¡Ver más! </Button>
           </Link>
         </Card.Body>
       </Card>
@@ -39,13 +40,14 @@ export function Catalogo() {
         <Card.Body>
           <Card.Title>Suite elegante</Card.Title>
           <Card.Text>
-            $6,000
+            $8,000
           </Card.Text>
-          <Link to="/metodopago">
-            <Button variant="secondary">Reservar ahora</Button>
+          <Link to="/ProCatalogo3">
+            <Button variant="secondary"> ¡Ver más! </Button>
           </Link>
         </Card.Body>
       </Card>
     </div>
+    
   )
 }
