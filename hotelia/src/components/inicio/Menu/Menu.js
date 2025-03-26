@@ -12,6 +12,7 @@ export function Menu() {
                     <Link to="/Registro" className="btn btn-outline-info"> Registro </Link>
                     <Link to="/Servicios" className="btn btn-outline-info"> Servicios </Link>
                     <Link to="/Reservas" className="btn btn-outline-info Reserva"> Reservas </Link>
+                    <Link to="/Administrador" className="btn btn-outline-info Administrador"> Administrador </Link>
                 </Nav>
             </Container>
         </Navbar>

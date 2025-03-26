@@ -13,6 +13,7 @@ import {ProCatalogo1} from '../page/Catalogo/ProCatalogo/ProCatalogo1';
 import {ProCatalogo2} from '../page/Catalogo/ProCatalogo/ProCatalogo2';
 import {ProCatalogo3} from '../page/Catalogo/ProCatalogo/ProCatalogo3';
 import {Reservas} from '../Reservas/Reservas'
+import{Administrador} from '../Administrador/Administrador'
 
 export function Rutas() {
   const Layouts = (Layout, Page) => {
@@ -37,6 +38,7 @@ export function Rutas() {
       <Route path="/ProCatalogo2" element={Layouts(Layout, ProCatalogo2)} />
       <Route path="/ProCatalogo3" element={Layouts(Layout, ProCatalogo3)} />
       <Route path="/Reservas" element={Layouts(Layout, Reservas)} />
+      <Route path="/Administrador" element={Layouts(Layout, Administrador)} />
     </Routes>
   )
 }
