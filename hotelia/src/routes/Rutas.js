@@ -2,18 +2,18 @@ import React from 'react'
 import { Layout } from '../layouts'
 import { Home } from '../page/Home'
 import { Routes, Route } from 'react-router-dom';
-import { Iniciosesion } from '../page/iniciosesion/iniciosesion';
-import {Registro} from '../page/Registro/Registro'
+import { Iniciosesion } from '../page/Iniciosesion/iniciosesion';
+import { Registro } from '../page/Registro/registro'
 import { Catalogo } from '../page/Catalogo';
 import { Metodopago } from '../page/Metodopago';
-import {Servicios} from '../page/Servicios/Servicios';
-import {ProServicios} from '../page/Servicios/ProServicios/ProServicios';
-import {ProServicios1} from '../page/Servicios/ProServicios/ProServicios1';
-import {ProCatalogo1} from '../page/Catalogo/ProCatalogo/ProCatalogo1';
-import {ProCatalogo2} from '../page/Catalogo/ProCatalogo/ProCatalogo2';
-import {ProCatalogo3} from '../page/Catalogo/ProCatalogo/ProCatalogo3';
-import {Reservas} from '../Reservas/Reservas'
-import{Administrador} from '../Administrador/Administrador'
+import { Servicios } from '../page/Servicios/Servicios';
+import { ProServicios } from '../page/Servicios/ProServicios/ProServicios';
+import { ProServicios1 } from '../page/Servicios/ProServicios/ProServicios1';
+import { ProCatalogo1 } from '../page/Catalogo/ProCatalogo/ProCatalogo1';
+import { ProCatalogo2 } from '../page/Catalogo/ProCatalogo/ProCatalogo2';
+import { ProCatalogo3 } from '../page/Catalogo/ProCatalogo/ProCatalogo3';
+import { Reservas } from '../Reservas/Reservas'
+import { Administrador } from '../Administrador/Administrador'
 
 export function Rutas() {
   const Layouts = (Layout, Page) => {

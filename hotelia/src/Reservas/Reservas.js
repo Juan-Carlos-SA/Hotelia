@@ -1,6 +1,13 @@
-import React, { useState } from "react";
+import React from 'react'
 
-const App = () => {
+export function Reservas() {
+  return (
+    <div>Reservas</div>
+  )
+}
+
+
+/*const App = () => {
   const [rooms, setRooms] = useState([
     { id: 1, name: "Habitación 101", available: true },
     { id: 2, name: "Habitación 102", available: true },
@@ -43,3 +50,4 @@ const App = () => {
     </div>
   );
 };
+*/
