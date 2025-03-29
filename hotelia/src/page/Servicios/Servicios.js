@@ -4,14 +4,15 @@ import holbox3 from '../../img/holbox3.jpg'
 import holbox2 from '../../img/holbox2.jpg'
 import { Link } from 'react-router-dom';
 import { Row, Col, Button} from 'react-bootstrap';
+import { MdOutlineArrowBackIosNew} from "react-icons/md";
 
 import './Servicios.css'
 
 export function Servicios() {
   return (
-  <div>
+    <div className="servicios-container">
   
-    <img src={holbox4} alt="Holbox" width="810px" />
+    <img src={holbox4} alt="Holbox" width="831px" />
     <Link to="/ProServicios"><img className="img2 " src={holbox3} alt="Holbox" width="100px" /></Link>
     <Link to="/ProServicios1"><img className="img2 img3" src={holbox2} alt="Holbox" width="100px" /></Link>
     <div>
@@ -26,7 +27,7 @@ export function Servicios() {
       <Row className="mb-4">
                 <Col>
                     <Link to="/catalogo">
-                        <Button variant="link" className="back1-button">Volver</Button>
+                        <Button variant="link" className="back1-button"> <MdOutlineArrowBackIosNew /> Volver</Button>
                     </Link>
                 </Col>
             </Row>

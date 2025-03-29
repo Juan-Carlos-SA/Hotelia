@@ -1,8 +1,16 @@
+.servicios-container {
+    height: 80vh;  /* Ajusta la altura al 100% de la pantalla */
+    width: 90%; /* Ocupa todo el ancho de la pantalla */
+}
 .img2{
     margin-left:80px;
     margin-top: -280px;
     border-radius: 30px;
     box-shadow: 10px 10px 20px rgba(185, 22, 168, 0.67);
+    transition: transform 0.3s ease; /* Efecto de zoom */
+}
+.img2:hover {
+    transform: scale(1.1); /* Zoom al pasar el mouse */
 }
 .img3{
     margin-top:210px;
@@ -11,23 +19,28 @@
 .Title1{
     margin-left: 955px;
     font-size: 60px;
-    margin-top: -730px; 
+    margin-top: -750px; 
 }
 .text1{
-    margin-left: 1100px;
+    margin-left: 1150px;
     font-size: 25px;
     margin-top: 90px;
-    margin-right:250px ;
 }
 .text2{
-    margin-left: 1050px;
+    margin-left: 1080px;
     font-size: 20px;
-    margin-top: 30px;
-    margin-right:300px;
+    margin-top: 40px;
+    margin-right:100px;
     text-align: justify;
 }
 .back1-button{
-    margin-left: 1700px;
+    margin-left: 1620px;
     margin-top: 20px;
-    font-size: 20px;
+    font-size: 18px;
+    text-decoration: none;
+    cursor: pointer;
+}
+.back1-button:hover {
+    text-decoration: none;
+    background-color: #b180b7a5; /* Fondo iluminado */
 }

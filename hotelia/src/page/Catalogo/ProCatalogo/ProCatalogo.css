@@ -1,38 +1,58 @@
-.img1{
-    width: 50%;
-    height: 50%;
-    object-fit: cover;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    border-radius: 0.5rem;box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.606);
-    margin-left: 100px;
-    margin-top: 50px;
-}
-.img1-1{
-    width: 54%;
-}
-.img1-4{
-    width: 48%;
-}
-.text-habitacion1{
+.Title-habitacion1{
     font-weight: bold;
-    margin-left: -700px;
+    margin-left: 1200px;
     margin-top: 20px;
-    color: black;
+    color: rgb(0, 0, 0);
+    margin-top:  -600px;
+    font-size: 50px;
+    margin-right: -70px;
 }
-.text-habitacion1-2{
-    font-weight: bold;
-    margin-left: -710px;
-    margin-top: 20px;
-    color: black;
-}
-.text-habitacion1-3{
-    font-weight: bold;
-    margin-left: -650px;
-    margin-top: 20px;
-    color: black;
+.Text-habitacion1{
+    margin-left: 1100px;
+    margin-top: 40px;
+    font-size: 20px;
 }
 .back1-button1{
-    margin-left: 1500px;
+    margin-left: 1670px;
     font-size: 25px;
+    margin-top:150px;
+    font-size: 18px;
+    position: absolute;
+    cursor: pointer;
+    text-decoration: none;
+}
+.back1-button1:hover {
+    background-color: #c5abc8a5; /* Fondo iluminado */
+    transform: scale(1.1); /* Zoom al pasar el mouse */
+}
+.back1-button2{
+    margin-left: 1470px;
+    font-size: 18px;
+    margin-top:10px;
+    cursor: pointer;
+    color: #000000;
+}
+.back1-button2:hover {
+    background-color: #b180b7a5; /* Fondo iluminado */
+    transform: scale(1.1); /* Zoom al pasar el mouse */
+}
+  .img-fullscreen {
+    height: 75vh; /* Ajusta la altura al 100% de la pantalla */
+    width: 53%; /* Mantén la proporción de la imagen */
+    object-fit: cover; /* Asegura que la imagen cubra el área sin distorsión */
+    border-radius: 10px;
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.606);
+    margin-left: 100px;
+    margin-top: 80px;
+  }
+
+  .icon-example {
+    font-size: 07px; /* Ajusta el tamaño del ícono */
+    color: #2b00ff; /* Cambia el color del ícono */
+    margin-right: 20px;
+}
+
+.ProCatalogo-container{
+    height: 80vh;  /* Ajusta la altura al 100% de la pantalla */
+    width: 90%; /* Mantén la proporción de la imagen */
 }

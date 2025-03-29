@@ -1,8 +1,8 @@
 .login-container {
     display: flex;
     align-items: center;
-    height: 100vh;
     background-color: #fff5e1;
+        height: 90vh;  /* Ajusta la altura al 100% de la pantalla */
 }
 .login-text {
     flex: 1
@@ -26,6 +26,6 @@
 .login-form .btn {
     width: 100%;
 }
-.login-form .d-flex {
+.d-flex {
     justify-content: space-between;
 }

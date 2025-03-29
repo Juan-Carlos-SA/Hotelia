@@ -1,35 +1,43 @@
-import React from 'react'
-import Form from 'react-bootstrap/Form';
-import Button from 'react-bootstrap/Button';
-import { Link } from 'react-router-dom';
-import './Iniciosesion.css'
+import React, { useState } from 'react';
+import { Form, Button } from 'react-bootstrap';
+import { Link, useNavigate } from 'react-router-dom';
+import { TbLockPassword } from "react-icons/tb";
+import { HiOutlineMailOpen } from "react-icons/hi";
+import './Iniciosesion.css';
 
 export function Iniciosesion() {
+    const [email, setEmail] = useState(''), [password, setPassword] = useState(''), [error, setError] = useState('');
+    const navigate = useNavigate();
+
+    const handleLogin = (e) => {
+        e.preventDefault();
+        const storedUser = JSON.parse(localStorage.getItem("usuario"));
+        storedUser && storedUser.email === email && storedUser.contraseña === password
+            ? navigate("/catalogo")
+            : setError("Correo o contraseña incorrectos");
+    };
+
+    const renderInput = (label, type, value, setValue, Icon) => (
+        <Form.Group className="mb-3">
+            <Form.Label><Icon /><strong>{label}</strong></Form.Label>
+            <Form.Control type={type} placeholder={`Ingresa tu ${label.toLowerCase()}`} value={value} onChange={(e) => setValue(e.target.value)} required />
+        </Form.Group>
+    );
+
     return (
         <div className="login-container">
-            <div className="login-text">
-                <h2>INICIA SESIÓN</h2>
-            </div>
+            <div className="login-text"><h2>INICIA SESIÓN</h2></div>
             <div className="login-form">
-                <Form>
-                    <Form.Group className="mb-3" controlId="formBasicEmail">
-                        <Form.Label><strong>Email</strong></Form.Label>
-                        <Form.Control type="email" placeholder="Ingresa tu email" />
-                    </Form.Group>
-                    <Form.Group className="mb-3" controlId="formBasicPassword">
-                        <Form.Label><strong>Contraseña</strong></Form.Label>
-                        <Form.Control type="password" placeholder="Ingresa tu contraseña" />
-                    </Form.Group>
+                <Form onSubmit={handleLogin}>
+                    {renderInput("Email", "email", email, setEmail, HiOutlineMailOpen)}
+                    {renderInput("Contraseña", "password", password, setPassword, TbLockPassword)}
+                    {error && <p className="text-danger">{error}</p>}
                     <div className="d-flex justify-content-between">
-                        <Link to="/catalogo">
-                            <Button variant="primary" type="submit">Acceder</Button>
-                        </Link>
-                        <Link to="/Registro">
-                            <Button variant="secondary">Registrarse</Button>
-                        </Link>
+                        <Button variant="primary" type="submit">Acceder</Button>
+                        <Link to="/Registro"><Button variant="secondary">Registrarse</Button></Link>
                     </div>
                 </Form>
             </div>
         </div>
-    )
+    );
 }
