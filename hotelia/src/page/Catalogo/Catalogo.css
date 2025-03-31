@@ -2,18 +2,37 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    height: 90vh;
     background-color: #f8f9fa;
     gap: 2rem; /* Añade un espacio entre las cartas */
+    
+        height: 80vh;  /* Ajusta la altura al 100% de la pantalla */
 }
 .catalogo-card {
     width: 50%; /* Ajusta el ancho según sea necesario */
     max-width: 400px; /* Ajusta el ancho máximo según sea necesario */
     margin: 2rem;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    border-radius: 0.5rem;box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.606);
+    border-radius: 0.7rem;
+    
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.606);
+    margin-top: 100px;
 }
+.catalogo-card:hover {
+    transform: scale(1.2); /* Aumenta el tamaño al pasar el mouse */
+    transition: transform 0.3s ease; /* Transición suave */
+
+}
+
+.catalogo-card-text{
+font-size: 18px;
+}
+
 .catalogo-card-img {
-    height: 300px; /* Ajusta la altura según sea necesario */
+    height: 350px; /* Ajusta la altura según sea necesario */
     object-fit: cover; /* Ajusta la imagen para que cubra el área sin distorsión */
+}
+.catalogo-card-link{
+    text-decoration: none; /* Elimina el subrayado del enlace */
+    color: inherit; /* Hereda el color del texto del padre */
 }
