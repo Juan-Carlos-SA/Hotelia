@@ -2,13 +2,13 @@ import React, { useState, useEffect } from "react";
 import { useFormik } from "formik";
 import { Button, Form, Row, Col, InputGroup } from "react-bootstrap";
 import { initialValues, validationSchema } from "./Productos.form";
-import { Administrador } from "../Administrador/Administrador";
-import { Producto } from "../../api";
+import { AdministradorProductosTable } from "../Administrador/AdministradorProductos";
+import { Producto } from "../api";
 
 const ctrProducto = new Producto();
 
-export function Administrador() {
-    const [Administrar, setAdministrar] = useState([]);
+export function Productos() {
+    const [listaProductos, setListaProductos] = useState([]);
 
     const formik = useFormik({
         initialValues: initialValues(),
@@ -24,7 +24,7 @@ export function Administrador() {
         try {
             const listaPro = await ctrProducto.getProducto();
             console.log("Productos obtenidos:", listaPro);
-            setAdministrar(listaPro);
+            setListaProductos(listaPro);
         } catch (error) {
             console.error("Error al obtener productos:", error);
         }
@@ -106,7 +106,7 @@ export function Administrador() {
             </Form>
 
             <Row>
-                <Administrador Productos={Administrar} onDelete={handleDelete} />
+                <AdministradorProductosTable productos={listaProductos} onDelete={handleDelete} />
             </Row>
         </div>
     );

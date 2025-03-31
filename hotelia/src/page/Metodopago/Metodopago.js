@@ -1,15 +1,20 @@
 import React, { useState } from 'react';
 import { Container, Row, Col, Button, Form } from 'react-bootstrap';
 import './Metodopago.css';
-import { Link, useLocation } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { MdOutlineArrowBackIosNew } from "react-icons/md";
+import { Folio } from './Folio';
+import { ProCatalogo1 } from '../Catalogo/ProCatalogo/ProCatalogo1';
+import { ProCatalogo2 } from '../Catalogo/ProCatalogo/ProCatalogo2';
+import { ProCatalogo3 } from '../Catalogo/ProCatalogo/ProCatalogo3';
 
 export function MetodoPago() {
     const location = useLocation();
+    const navigate = useNavigate();
     const [arrivalDate, setArrivalDate] = useState('');
     const [departureDate, setDepartureDate] = useState('');
     const [selectedTime, setSelectedTime] = useState('');
-    const [habitacion, setHabitacion] = useState(location.state?.habitacion || '');
+    const [habitacion, setHabitacion] = useState(location.state?.habitacion || 'Habitación no especificada');
     const [precio, setPrecio] = useState(location.state?.precio || 0);
 
     const handleArrivalDateChange = (event) => setArrivalDate(event.target.value);
@@ -28,15 +33,21 @@ export function MetodoPago() {
             return;
         }
         alert(`¡Reserva realizada con éxito para la ${habitacion} desde el ${formatDate(arrivalDate)} hasta el ${formatDate(departureDate)} con check-out a las ${selectedTime}!`);
+        navigate('/Folio', { state: { habitacion, precio, arrivalDate, departureDate, selectedTime } });
+    };
+
+    const handleRedirect = () => {
+        const origen = location.state?.origen || '/'; // Determina la página de origen o redirige a la página principal por defecto
+        navigate(origen); // Redirige a la página de origen
     };
 
     return (
         <Container className="metodopago-container">
             <Row className="mb-4">
                 <Col>
-                    <Link to="/catalogo">
-                        <Button variant="link" className="back-button"><MdOutlineArrowBackIosNew />Volver</Button>
-                    </Link>
+                    <Button variant="link" onClick={handleRedirect} className="back-button">
+                        <MdOutlineArrowBackIosNew /> Volver
+                    </Button>
                 </Col>
             </Row>
             <Row>
@@ -69,13 +80,13 @@ export function MetodoPago() {
                 </Col>
                 <Col md={4}>
                     <h4>Detalles del servicio</h4>
-                    <p><strong>Habitación:</strong> {habitacion || 'Selecciona una habitación'}</p>
+                    <p><strong>Habitación:</strong> {habitacion}</p>
                     <p><strong>Fecha de Llegada:</strong> {arrivalDate ? formatDate(arrivalDate) : 'Selecciona una fecha de llegada'}</p>
                     <p><strong>Fecha de Salida:</strong> {departureDate ? formatDate(departureDate) : 'Selecciona una fecha de salida'}</p>
                     <p><strong>Hora de Check-Out:</strong> {selectedTime || 'Selecciona una hora de salida'}</p>
                     <p><strong>Ubicación:</strong> Holbox</p>
                     <p><strong>Duración de la Estancia:</strong> {arrivalDate && departureDate ? `${Math.ceil((new Date(departureDate).setHours(0, 0, 0, 0) - new Date(arrivalDate).setHours(0, 0, 0, 0)) / (1000 * 60 * 60 * 24))} días` : 'Calculando...'}</p>
-                    <p><strong>Precio:</strong> ${precio || '0.00'}</p>
+                    <p><strong>Precio:</strong> ${precio}</p>
                     <p><strong>Costo Total:</strong> {arrivalDate && departureDate ? `$${Math.ceil((new Date(departureDate).setHours(0, 0, 0, 0) - new Date(arrivalDate).setHours(0, 0, 0, 0)) / (1000 * 60 * 60 * 24)) * precio}` : 'Calculando...'}</p>
                     <Button variant="primary" className="mt-3" onClick={handleReservation}>¡Confirmar Reserva!</Button>
                 </Col>

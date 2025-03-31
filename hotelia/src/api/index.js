@@ -1,1 +1,1 @@
-export * from "./producto"
+export * from "./producto-api"
