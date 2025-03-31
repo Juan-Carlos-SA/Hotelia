@@ -1,7 +1,7 @@
 import React from "react";
 import { Button, Table } from "react-bootstrap";
 
-export function AdministradorProductos({ productos = [], onDelete }) {
+export function productos({ productos = [], onDelete }) {
     return (
         <Table striped bordered hover>
            <thead>

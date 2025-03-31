@@ -2,8 +2,8 @@ import React from 'react';
 import { Layout } from '../layouts';
 import { Home } from '../page/Home';
 import { Routes, Route } from 'react-router-dom';
-import { Iniciosesion } from '../page/iniciosesion/iniciosesion';
-import { Registro } from '../page/Registro/Registro';
+import { Iniciosesion } from '../page/Iniciosesion/iniciosesion';
+import { Registro } from '../page/Registro/registro';
 import { Catalogo } from '../page/Catalogo';
 import { MetodoPago } from '../page/Metodopago/Metodopago';
 import { Servicios } from '../page/Servicios/Servicios';
@@ -13,8 +13,8 @@ import { ProCatalogo1 } from '../page/Catalogo/ProCatalogo/ProCatalogo1';
 import { ProCatalogo2 } from '../page/Catalogo/ProCatalogo/ProCatalogo2';
 import { ProCatalogo3 } from '../page/Catalogo/ProCatalogo/ProCatalogo3';
 import { Reservas } from '../Reservas/Reservas';
+import { Productos } from '../Formulario/Productos';
 // Corrige la ruta de importación del componente Administrador
-import{AdministradorProductos} from'../Administrador/AdministradorProductos';
 import { Folio } from '../page/Metodopago/Folio';
 
 export function Rutas() {
@@ -40,7 +40,7 @@ export function Rutas() {
       <Route path="/ProCatalogo2" element={Layouts(Layout, ProCatalogo2)} />
       <Route path="/ProCatalogo3" element={Layouts(Layout, ProCatalogo3)} />
       <Route path="/Reservas" element={Layouts(Layout, Reservas)} />
-      <Route path="/AdministradorProductos" element={Layouts(Layout, AdministradorProductos)} />
+      <Route path="/Administrador" element={Layouts(Layout, Productos)} />
       <Route path="/Folio" element={Layouts(Layout, Folio)} />
     </Routes>
   );

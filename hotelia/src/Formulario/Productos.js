@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import { useFormik } from "formik";
 import { Button, Form, Row, Col, InputGroup } from "react-bootstrap";
 import { initialValues, validationSchema } from "./Productos.form";
-import { AdministradorProductosTable } from "../Administrador/AdministradorProductos";
 import { Producto } from "../api";
 
 const ctrProducto = new Producto();
@@ -106,7 +105,7 @@ export function Productos() {
             </Form>
 
             <Row>
-                <AdministradorProductosTable productos={listaProductos} onDelete={handleDelete} />
+                <productos productos={listaProductos} onDelete={handleDelete} />
             </Row>
         </div>
     );
