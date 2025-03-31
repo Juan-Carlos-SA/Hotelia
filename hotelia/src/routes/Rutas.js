@@ -23,7 +23,7 @@ export function Rutas() {
       </Layout>
     );
   }
-
+//hola
   return (
     <Routes>
       <Route path="/" element={Layouts(Layout, Home)} />
