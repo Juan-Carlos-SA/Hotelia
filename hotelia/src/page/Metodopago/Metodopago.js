@@ -1,19 +1,20 @@
 import React, { useState } from 'react';
 import { Container, Row, Col, Button, Form } from 'react-bootstrap';
 import './Metodopago.css';
-import { Link } from "react-router-dom";
+import { Link, useLocation } from 'react-router-dom';
+import { MdOutlineArrowBackIosNew } from "react-icons/md";
 
-export function Metodopago() {
-    const [selectedDate, setSelectedDate] = useState('');
+export function MetodoPago() {
+    const location = useLocation();
+    const [arrivalDate, setArrivalDate] = useState('');
+    const [departureDate, setDepartureDate] = useState('');
     const [selectedTime, setSelectedTime] = useState('');
+    const [habitacion, setHabitacion] = useState(location.state?.habitacion || '');
+    const [precio, setPrecio] = useState(location.state?.precio || 0);
 
-    const handleDateChange = (event) => {
-        setSelectedDate(event.target.value);
-    };
-
-    const handleTimeChange = (time) => {
-        setSelectedTime(time);
-    };
+    const handleArrivalDateChange = (event) => setArrivalDate(event.target.value);
+    const handleDepartureDateChange = (event) => setDepartureDate(event.target.value);
+    const handleTimeChange = (time) => setSelectedTime(time);
 
     const formatDate = (dateString) => {
         const date = new Date(dateString);
@@ -21,27 +22,42 @@ export function Metodopago() {
         return date.toLocaleDateString('es-ES', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
     };
 
+    const handleReservation = () => {
+        if (!arrivalDate || !departureDate || !selectedTime) {
+            alert('Por favor, selecciona la fecha de llegada, la fecha de salida y la hora de check-out antes de reservar.');
+            return;
+        }
+        alert(`¡Reserva realizada con éxito para la ${habitacion} desde el ${formatDate(arrivalDate)} hasta el ${formatDate(departureDate)} con check-out a las ${selectedTime}!`);
+    };
+
     return (
         <Container className="metodopago-container">
             <Row className="mb-4">
                 <Col>
                     <Link to="/catalogo">
-                        <Button variant="link" className="back-button">Volver</Button>
+                        <Button variant="link" className="back-button"><MdOutlineArrowBackIosNew />Volver</Button>
                     </Link>
                 </Col>
             </Row>
             <Row>
                 <Col md={8}>
-                    <h2>Suit Residencial</h2>
-                    <p>Revisa nuestra disponibilidad y reserva la fecha y hora que más te convengan</p>
-                    <h4>Selecciona fecha y hora</h4>
+                    <h2>{habitacion || 'Método de Pago'}</h2>
+                    <p>Revisa nuestra disponibilidad y reserva la fecha de llegada y salida del hotel que más te convengan</p>
+                    
+                    <h4>Selecciona la Fecha de Llegada</h4>
                     <Form>
-                        <Form.Group controlId="formDate">
-                            <Form.Label>Fecha</Form.Label>
-                            <Form.Control type="date" value={selectedDate} onChange={handleDateChange} />
+                        <Form.Group controlId="formArrivalDate">
+                            <Form.Control type="date" value={arrivalDate} onChange={handleArrivalDateChange} />
+                        </Form.Group>
+                    </Form>
+
+                    <h4>Selecciona la Fecha de Salida</h4>
+                    <Form>
+                        <Form.Group controlId="formDepartureDate">
+                            <Form.Control type="date" value={departureDate} onChange={handleDepartureDateChange} />
                         </Form.Group>
                         <Form.Group controlId="formTime" className="mt-3">
-                            <Form.Label>Hora</Form.Label>
+                        <h4>Hora de Check-Out</h4>
                             <div className="d-flex justify-content-between">
                                 <Button variant="outline-secondary" onClick={() => handleTimeChange('8:00 a.m.')}>8:00 a.m.</Button>
                                 <Button variant="outline-secondary" onClick={() => handleTimeChange('10:00 a.m.')}>10:00 a.m.</Button>
@@ -53,13 +69,15 @@ export function Metodopago() {
                 </Col>
                 <Col md={4}>
                     <h4>Detalles del servicio</h4>
-                    <p>Suit Residencial</p>
-                    <p>{selectedDate ? `${formatDate(selectedDate)}, ${selectedTime}` : 'Selecciona una fecha y hora'}</p>
-                    <p>Holbox</p>
-                    <p>Miembro del equipo n.º 1</p>
-                    <p>2 h</p>
-                    <p>$5,200</p>
-                    <Button variant="primary" className="mt-3">¡Reservar ahora!</Button>
+                    <p><strong>Habitación:</strong> {habitacion || 'Selecciona una habitación'}</p>
+                    <p><strong>Fecha de Llegada:</strong> {arrivalDate ? formatDate(arrivalDate) : 'Selecciona una fecha de llegada'}</p>
+                    <p><strong>Fecha de Salida:</strong> {departureDate ? formatDate(departureDate) : 'Selecciona una fecha de salida'}</p>
+                    <p><strong>Hora de Check-Out:</strong> {selectedTime || 'Selecciona una hora de salida'}</p>
+                    <p><strong>Ubicación:</strong> Holbox</p>
+                    <p><strong>Duración de la Estancia:</strong> {arrivalDate && departureDate ? `${Math.ceil((new Date(departureDate).setHours(0, 0, 0, 0) - new Date(arrivalDate).setHours(0, 0, 0, 0)) / (1000 * 60 * 60 * 24))} días` : 'Calculando...'}</p>
+                    <p><strong>Precio:</strong> ${precio || '0.00'}</p>
+                    <p><strong>Costo Total:</strong> {arrivalDate && departureDate ? `$${Math.ceil((new Date(departureDate).setHours(0, 0, 0, 0) - new Date(arrivalDate).setHours(0, 0, 0, 0)) / (1000 * 60 * 60 * 24)) * precio}` : 'Calculando...'}</p>
+                    <Button variant="primary" className="mt-3" onClick={handleReservation}>¡Confirmar Reserva!</Button>
                 </Col>
             </Row>
         </Container>

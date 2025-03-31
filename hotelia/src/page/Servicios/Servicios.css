@@ -10,7 +10,7 @@
     transition: transform 0.3s ease; /* Efecto de zoom */
 }
 .img2:hover {
-    transform: scale(1.1); /* Zoom al pasar el mouse */
+    transform: scale(1.5); /* Zoom al pasar el mouse */
 }
 .img3{
     margin-top:210px;
@@ -43,4 +43,5 @@
 .back1-button:hover {
     text-decoration: none;
     background-color: #b180b7a5; /* Fondo iluminado */
+    transform: scale(1.2); /* Zoom al pasar el mouse */
 }

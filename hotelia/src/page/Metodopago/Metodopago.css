@@ -6,6 +6,9 @@
     font-size: 1.2rem;
     text-decoration: none;
 }
+.back-button:hover {
+    background-color: #b180b7a5; /* Fondo iluminado */
+}
 
 h2 {
     font-size: 2rem;

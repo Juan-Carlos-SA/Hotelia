@@ -1,40 +1,61 @@
 .Title-habitacion1{
     font-weight: bold;
     margin-left: 1200px;
-    margin-top: 20px;
     color: rgb(0, 0, 0);
-    margin-top:  -600px;
+    margin-top:  -650px;
     font-size: 50px;
     margin-right: -70px;
+}
+
+.h-1{
+    margin-top: -700px;
 }
 .Text-habitacion1{
     margin-left: 1100px;
     margin-top: 40px;
-    font-size: 20px;
+    font-size: 19px;
+    margin-right: -50px;
+}
+
+.Title2-habitacion1{
+    margin-top: -30px;
 }
 .back1-button1{
     margin-left: 1670px;
     font-size: 25px;
-    margin-top:150px;
+    margin-top:110px;
     font-size: 18px;
     position: absolute;
     cursor: pointer;
     text-decoration: none;
 }
+.h1{
+    margin-top: 30px;
+}
 .back1-button1:hover {
     background-color: #c5abc8a5; /* Fondo iluminado */
-    transform: scale(1.1); /* Zoom al pasar el mouse */
+    transform: scale(1.2); /* Zoom al pasar el mouse */
 }
 .back1-button2{
-    margin-left: 1470px;
-    font-size: 18px;
-    margin-top:10px;
+    margin-left: 1400px;
+    font-size: 19px;
+    margin-top:02px;
     cursor: pointer;
     color: #000000;
 }
 .back1-button2:hover {
     background-color: #b180b7a5; /* Fondo iluminado */
-    transform: scale(1.1); /* Zoom al pasar el mouse */
+}
+.back1-button3{
+    margin-top:-50px;
+    margin-left: 1550px;
+    font-size: 19px;
+    cursor: pointer;
+    color: #000000;
+}
+.back1-button2:hover {
+    background-color: #b180b7a5; /* Fondo iluminado */
+    transform: scale(1.2); /* Zoom al pasar el mouse */
 }
   .img-fullscreen {
     height: 75vh; /* Ajusta la altura al 100% de la pantalla */

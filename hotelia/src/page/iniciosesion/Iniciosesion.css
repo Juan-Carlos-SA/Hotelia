@@ -2,7 +2,7 @@
     display: flex;
     align-items: center;
     background-color: #fff5e1;
-        height: 90vh;  /* Ajusta la altura al 100% de la pantalla */
+        height: 93.5vh;  /* Ajusta la altura al 100% de la pantalla */
 }
 .login-text {
     flex: 1
