@@ -1,4 +1,3 @@
-import axios from "axios";
 
 const localH = "http://localhost:4000/api";
 

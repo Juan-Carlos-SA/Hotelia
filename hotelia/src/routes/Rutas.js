@@ -1,21 +1,19 @@
-import React from 'react';
-import { Layout } from '../layouts';
-import { Home } from '../page/Home';
+import React from 'react'
+import { Layout } from '../layouts'
+import { Home } from '../page/Home'
 import { Routes, Route } from 'react-router-dom';
 import { Iniciosesion } from '../page/Iniciosesion/iniciosesion';
-import { Registro } from '../page/Registro/registro';
+import { Registro } from '../page/Registro/registro'
 import { Catalogo } from '../page/Catalogo';
-import { MetodoPago } from '../page/Metodopago/Metodopago';
+import { MetodoPago } from '../page/Metodopago';
 import { Servicios } from '../page/Servicios/Servicios';
 import { ProServicios } from '../page/Servicios/ProServicios/ProServicios';
 import { ProServicios1 } from '../page/Servicios/ProServicios/ProServicios1';
 import { ProCatalogo1 } from '../page/Catalogo/ProCatalogo/ProCatalogo1';
 import { ProCatalogo2 } from '../page/Catalogo/ProCatalogo/ProCatalogo2';
 import { ProCatalogo3 } from '../page/Catalogo/ProCatalogo/ProCatalogo3';
-import { Reservas } from '../Reservas/Reservas';
+import { Reservas } from '../Reservas/Reservas'
 import { Productos } from '../Formulario/Productos';
-// Corrige la ruta de importación del componente Administrador
-import { Folio } from '../page/Metodopago/Folio';
 
 export function Rutas() {
   const Layouts = (Layout, Page) => {
@@ -25,11 +23,11 @@ export function Rutas() {
       </Layout>
     );
   }
-//hola
+
   return (
     <Routes>
       <Route path="/" element={Layouts(Layout, Home)} />
-      <Route path="/Iniciosesion" element={Layouts(Layout, Iniciosesion)} />
+      <Route path="/Iniciosesion" element={Layouts(Layout,Iniciosesion )} />
       <Route path="/Registro" element={Layouts(Layout, Registro)} />
       <Route path="/Catalogo" element={Layouts(Layout, Catalogo)} />
       <Route path="/Metodopago" element={Layouts(Layout, MetodoPago)} />
@@ -40,8 +38,7 @@ export function Rutas() {
       <Route path="/ProCatalogo2" element={Layouts(Layout, ProCatalogo2)} />
       <Route path="/ProCatalogo3" element={Layouts(Layout, ProCatalogo3)} />
       <Route path="/Reservas" element={Layouts(Layout, Reservas)} />
-      <Route path="/Administrador" element={Layouts(Layout, Productos)} />
-      <Route path="/Folio" element={Layouts(Layout, Folio)} />
+      <Route path="/Administrador" element={Layouts(Layout,Productos)}/>
     </Routes>
-  );
+  )
 }
