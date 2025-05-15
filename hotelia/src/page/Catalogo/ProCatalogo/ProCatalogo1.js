@@ -18,6 +18,17 @@ export function ProCatalogo1() {
   // Datos de la habitación
   const habitacion = "Habitación Doble";
   const precio = 4500;
+  const origen = '/ProCatalogo1';
+
+  const serviciosIncluidos = [
+    "Baño privado con ducha y bañera",
+    "Wi-Fi gratuito",
+    "Limpieza diaria",
+    "Servicio de habitaciones (room service)",
+    "Caja fuerte",
+    "Minibar o refrigerador pequeño",
+    "Cafetera o tetera"
+  ];
 
   // Cambiar automáticamente las imágenes
   useEffect(() => {
@@ -84,7 +95,7 @@ export function ProCatalogo1() {
         <Col>
           <Link
             to="/MetodoPago"
-            state={{ habitacion, precio }} // Enviar datos al componente MetodoPago
+            state={{ habitacion, precio, serviciosIncluidos, origen }} // Enviar todos los datos necesarios
           >
             <Button variant="primary" className="back1-button3" type="submit">Reservar<FaAngleDoubleRight /></Button>
           </Link>

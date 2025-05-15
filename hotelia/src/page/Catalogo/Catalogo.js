@@ -31,7 +31,7 @@ export function Catalogo() {
         <Card.Img variant="top" src={cuarto2} className="catalogo-card-img" />
         <Card.Body>
         <Card.Title></Card.Title>
-          <Card.Title><strong>Cabaña</strong></Card.Title>
+          <Card.Title><strong> Cabaña </strong></Card.Title>
           <Card.Text className='catalogo-card-text'>
             $18,000
           </Card.Text>

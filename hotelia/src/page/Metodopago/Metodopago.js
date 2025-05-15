@@ -3,19 +3,20 @@ import { Container, Row, Col, Button, Form } from 'react-bootstrap';
 import './Metodopago.css';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { MdOutlineArrowBackIosNew } from "react-icons/md";
-import { Folio } from './Folio';
-import { ProCatalogo1 } from '../Catalogo/ProCatalogo/ProCatalogo1';
-import { ProCatalogo2 } from '../Catalogo/ProCatalogo/ProCatalogo2';
-import { ProCatalogo3 } from '../Catalogo/ProCatalogo/ProCatalogo3';
 
 export function MetodoPago() {
     const location = useLocation();
     const navigate = useNavigate();
+
+    // Recibir los datos de la habitación y servicios desde el estado
+    const habitacion = location.state?.habitacion || 'Habitación no especificada';
+    const precio = location.state?.precio || 0;
+    const serviciosIncluidos = location.state?.serviciosIncluidos || [];
+    const origen = location.state?.origen || '/';
+
     const [arrivalDate, setArrivalDate] = useState('');
     const [departureDate, setDepartureDate] = useState('');
     const [selectedTime, setSelectedTime] = useState('');
-    const [habitacion, setHabitacion] = useState(location.state?.habitacion || 'Habitación no especificada');
-    const [precio, setPrecio] = useState(location.state?.precio || 0);
 
     const handleArrivalDateChange = (event) => setArrivalDate(event.target.value);
     const handleDepartureDateChange = (event) => setDepartureDate(event.target.value);
@@ -33,11 +34,10 @@ export function MetodoPago() {
             return;
         }
         alert(`¡Reserva realizada con éxito para la ${habitacion} desde el ${formatDate(arrivalDate)} hasta el ${formatDate(departureDate)} con check-out a las ${selectedTime}!`);
-        navigate('/Folio', { state: { habitacion, precio, arrivalDate, departureDate, selectedTime } });
+        navigate('/Folio', { state: { habitacion, precio, arrivalDate, departureDate, selectedTime, serviciosIncluidos } });
     };
 
     const handleRedirect = () => {
-        const origen = location.state?.origen || '/'; // Determina la página de origen o redirige a la página principal por defecto
         navigate(origen); // Redirige a la página de origen
     };
 
@@ -88,6 +88,12 @@ export function MetodoPago() {
                     <p><strong>Duración de la Estancia:</strong> {arrivalDate && departureDate ? `${Math.ceil((new Date(departureDate).setHours(0, 0, 0, 0) - new Date(arrivalDate).setHours(0, 0, 0, 0)) / (1000 * 60 * 60 * 24))} días` : 'Calculando...'}</p>
                     <p><strong>Precio:</strong> ${precio}</p>
                     <p><strong>Costo Total:</strong> {arrivalDate && departureDate ? `$${Math.ceil((new Date(departureDate).setHours(0, 0, 0, 0) - new Date(arrivalDate).setHours(0, 0, 0, 0)) / (1000 * 60 * 60 * 24)) * precio}` : 'Calculando...'}</p>
+                    <h4>Servicios Incluidos:</h4>
+                    <ul>
+                        {serviciosIncluidos.map((servicio, index) => (
+                            <li key={index}>{servicio}</li>
+                        ))}
+                    </ul>
                     <Button variant="primary" className="mt-3" onClick={handleReservation}>¡Confirmar Reserva!</Button>
                 </Col>
             </Row>

@@ -16,6 +16,19 @@ import { Row, Col, Button} from 'react-bootstrap';
 import './ProServicios.css';
 
 export  function ProServicios() {
+
+  // Datos de la habitación
+  const ServiciosIncluidos ={
+    "Baño privado con ducha y bañera": true,
+    "Artículos de aseo (jabón, shampoo, toallas, secador de pelo)": true,
+    "Wi-Fi gratuito": true,
+    "Limpieza diaria": true,
+    "Servicio de habitaciones (room service)": true,
+    "Caja fuerte": true,
+    "Minibar o refrigerador pequeño": true,
+    "Cafetera o tetera": true
+  };
+
   return (
       <div className="carousel-container">
     <Carousel interval={2000} pause="hover">

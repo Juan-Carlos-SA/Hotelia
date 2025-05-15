@@ -16,24 +16,35 @@ export function ProCatalogo3() {
   // Datos de la habitación
   const habitacion = "Suite Elegante";
   const precio = 8000;
-
-  // Cambiar automáticamente las imágenes cada 3 segundos
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentIndex((prevIndex) => (prevIndex === images.length - 1 ? 0 : prevIndex + 1));
-    }, 950); // Cambia cada 3 segundos
-
-    return () => clearInterval(interval); // Limpia el intervalo al desmontar el componente
-  }, [images.length]);
-
-  return (
-    <div className="ProCatalogo-container">
-      {/* Imagen actual */}
-      <div className="slide">
-        <img className="img-fullscreen" src={images[currentIndex]} alt={`Slide ${currentIndex + 1}`} />
-        <h3 className="Title-habitacion1 -1">{habitacion}</h3>
-        <table className="Text-habitacion1">
-          <tbody>
+    const origen = '/ProCatalogo3';
+  
+    const serviciosIncluidos = [
+      "Baño privado con ducha y bañera",
+      "Wi-Fi gratuito",
+      "Limpieza diaria",
+      "Servicio de habitaciones (room service)",
+      "Caja fuerte",
+      "Minibar o refrigerador pequeño",
+      "Cafetera o tetera"
+    ];
+  
+    // Cambiar automáticamente las imágenes
+    useEffect(() => {
+      const interval = setInterval(() => {
+        setCurrentIndex((prevIndex) => (prevIndex === images.length - 1 ? 0 : prevIndex + 1));
+      }, 950);
+  
+      return () => clearInterval(interval); // Limpia el intervalo al desmontar el componente
+    }, [images.length]);
+  
+    return (
+      <div className="ProCatalogo-container">
+        {/* Imagen actual */}
+        <div className="slide">
+          <img className="img-fullscreen" src={images[currentIndex]} alt={`Slide ${currentIndex + 1}`} />
+          <h3 className="Title-habitacion1">Suite Elegante</h3>
+          <table className="Text-habitacion1">
+            <tbody>
             <tr>
               <td> <FaCircle className="icon-example" /> Sala de estar independiente con sofás y zona de entretenimiento.</td>
             </tr>
@@ -55,7 +66,7 @@ export function ProCatalogo3() {
             <tr>
               <td> <FaCircle className="icon-example" /> Servicio de mayordomo o concierge 24/7</td>
             </tr>
-            <tr>
+             <tr>
               <td> <FaCircle className="icon-example" /> Desayuno de cortesía en la habitación</td>
             </tr>
             <tr>
@@ -64,46 +75,46 @@ export function ProCatalogo3() {
             <tr>
               <td> <FaCircle className="icon-example" /> Aire acondicionado y calefacción</td>
             </tr>
-          </tbody>
-        </table>
+          </tbody>
+          </table>
+        </div>
+        <Row className="mb-4">
+          <Col>
+            <Link to="/Servicios">
+              <Button variant="link" className="back1-button2">Servicios...</Button>
+            </Link>
+          </Col>
+        </Row>
+        <div>
+          <table className="Text-habitacion1">
+            <h3 className="Title2-habitacion1">Políticas:</h3>
+            <tbody>
+              <tr>
+                <td> <FaCircle className="icon-example" /> Horarios de llegada y check-in/check-out fija</td>
+              </tr>
+              <tr>
+                <td> <FaCircle className="icon-example" /> Políticas de mascotas, fumadores, etc.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <Row className="mb-4">
+          <Col>
+            <Link
+              to="/MetodoPago"
+              state={{ habitacion, precio, serviciosIncluidos, origen }} // Enviar todos los datos necesarios
+            >
+              <Button variant="primary" className="back1-button3" type="submit">Reservar<FaAngleDoubleRight /></Button>
+            </Link>
+          </Col>
+        </Row>
+        <Row className="mb-4">
+          <Col>
+            <Link to="/catalogo">
+              <Button variant="link" className="back1-button1"><MdOutlineArrowBackIosNew />Volver</Button>
+            </Link>
+          </Col>
+        </Row>
       </div>
-      <Row className="mb-4">
-        <Col>
-          <Link to="/Servicios">
-            <Button variant="link" className="back1-button2"> Servicios...</Button>
-          </Link>
-        </Col>
-      </Row>
-      <div>
-        <table className="Text-habitacion1">
-          <h3 className="Title2-habitacion1">Políticas:</h3>
-          <tbody>
-            <tr>
-              <td> <FaCircle className="icon-example" /> Horarios de llegada y check-in/check-out fija</td>
-            </tr>
-            <tr>
-              <td> <FaCircle className="icon-example" /> Políticas de mascotas, fumadores, etc.</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-      <Row className="mb-4">
-        <Col>
-          <Link
-            to="/MetodoPago"
-            state={{ habitacion, precio }} // Enviar datos al componente MetodoPago
-          >
-            <Button variant="primary" className="back1-button3" type="submit">Reservar<FaAngleDoubleRight /></Button>
-          </Link>
-        </Col>
-      </Row>
-      <Row className="mb-4">
-        <Col>
-          <Link to="/catalogo">
-            <Button variant="link" className="back1-button1 h1"><MdOutlineArrowBackIosNew />Volver</Button>
-          </Link>
-        </Col>
-      </Row>
-    </div>
-  );
-}
+    );
+  }

@@ -16,7 +16,6 @@ export function Menu() {
                         <Link to="/Servicios" className="btn btn-outline-info"> Servicios </Link>
                     </Nav>
                     <Nav className="ms-auto">
-                        <Link to="/Reservas" className="btn btn-outline-info"> Reservas </Link>
                         <Link to="/Administrador" className="btn btn-outline-info"> Administrador </Link>
                     </Nav>
                 </Navbar.Collapse>
