@@ -11,7 +11,8 @@ module.exports = {
     DB_NAME,
     DB_PORT,
     IP_SERVER,
-    CREATEPRODUCTO:"/createProducto",
-    GET_PRODUCTO: '/getProducto',
-    DELETE_PRODUCTO: '/delProducto'
-}
+    CREATEPRODUCTO: "/createProducto",
+    GET_PRODUCTO: "/getProducto",
+    DELETE_PRODUCTO: "/delProducto",
+    UPDATEPRODUCTO: "/updateProducto" 
+};
