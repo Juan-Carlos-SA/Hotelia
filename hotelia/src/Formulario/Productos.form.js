@@ -6,7 +6,7 @@ export function initialValues(){
         precio: "",
         cantidad: "",
         unidad: "",
-        imagen: "",
+        imagep: "",
     }
 }
 
@@ -14,8 +14,8 @@ export function validationSchema(){
     return YUP.object({
         nombre:YUP.string(),
         precio: YUP.number(),
-        cantidad: YUP.number(),
+        cantidad: YUP.string(),
         unidad: YUP.string(),
-        imagen: YUP.string()
+        imagep: YUP.string()
     })
 }

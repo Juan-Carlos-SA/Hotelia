@@ -2,8 +2,8 @@ import React from 'react'
 import { Layout } from '../layouts'
 import { Home } from '../page/Home'
 import { Routes, Route } from 'react-router-dom';
-import { Iniciosesion } from '../page/iniciosesion/iniciosesion';
-import { Registro } from '../page/Registro/Registro'
+import { Iniciosesion } from '../page/Iniciosesion/iniciosesion';
+import { Registro } from '../page/Registro/registro'
 import { Catalogo } from '../page/Catalogo';
 import { MetodoPago } from '../page/Metodopago';
 import { Servicios } from '../page/Servicios/Servicios';

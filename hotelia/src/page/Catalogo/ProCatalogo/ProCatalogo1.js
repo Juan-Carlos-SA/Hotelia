@@ -12,7 +12,7 @@ import { Row, Col, Button } from 'react-bootstrap';
 import './ProCatalogo.css';
 
 export function ProCatalogo1() {
-  const images = [holbox5, holbox25, holbox9]; // Lista de imágenes
+  const images = [holbox5, holbox25, holbox9]; 
   const [currentIndex, setCurrentIndex] = useState(0); // Estado para la imagen actual
 
   // Datos de la habitación
