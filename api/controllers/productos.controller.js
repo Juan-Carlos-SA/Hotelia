@@ -45,7 +45,6 @@ async function delProducto(req, res) {
             return res.status(404).send({ message: "Producto no encontrado" });
         }
 
-        // Verifica si el producto tiene una imagen antes de intentar eliminarla
         if (producto.imagep) {
             const imagePath = path.join(__dirname, '..', producto.imagep);
 
@@ -75,7 +74,6 @@ async function updateProducto(req, res) {
         }
 
         if (req.files && req.files.imagep) {
-            // Elimina la imagen anterior si existe
             if (producto.imagep) {
                 const oldImagePath = path.join(__dirname, "..", producto.imagep);
                 if (fs.existsSync(oldImagePath)) {
@@ -83,7 +81,6 @@ async function updateProducto(req, res) {
                 }
             }
 
-            // Guarda la nueva imagen
             updateData.imagep = getfilePath(req.files.imagep);
         }
 
