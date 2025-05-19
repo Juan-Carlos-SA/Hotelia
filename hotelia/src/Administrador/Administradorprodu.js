@@ -32,7 +32,7 @@ export function AdministradorProductosTable({ productos = [], onDelete }) {
                                     style={{ width: "50px", height: "50px" }}
                                 />
                             ) : (
-                                "Sin imagen unu"
+                                "Sin imagen disponible"
                             )}
                         </td>
                         <td>
