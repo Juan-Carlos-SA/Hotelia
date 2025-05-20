@@ -1,3 +1,5 @@
+
+
 import React, { useState, useEffect } from "react";
 import { useFormik } from "formik";
 import { Button, Form, Row, Col, InputGroup } from "react-bootstrap";
@@ -23,7 +25,7 @@ export function Productos() {
     const obtenerProductos = async () => {
         try {
             const listaPro = await ctrProducto.getProducto();
-            console.log("Productos obtenidos:", listaPro);
+            console.log("Productos obtenidos después de la actualización:", listaPro); // Verifica los datos obtenidos
             setListaProductos(listaPro);
         } catch (error) {
             console.error("Error al obtener productos:", error);
@@ -34,7 +36,19 @@ export function Productos() {
         const confirmDelete = window.confirm("¿Estás seguro de que deseas eliminar este producto?");
         if (confirmDelete) {
             await ctrProducto.deleteProducto(productId);
-            await obtenerProductos(); // Actualiza la lista después de eliminar
+            await obtenerProductos(); 
+        }
+    };
+
+    const handleUpdate = async (productId, updatedData) => {
+        console.log("ID del producto:", productId); 
+        console.log("Datos enviados al backend:", updatedData); 
+        try {
+            await ctrProducto.updateProducto(productId, updatedData);
+            await obtenerProductos();
+            alert("Producto actualizado correctamente");
+        } catch (error) {
+            console.error("Error al actualizar el producto:", error);
         }
     };
 
@@ -47,10 +61,10 @@ export function Productos() {
             <Form noValidate onSubmit={formik.handleSubmit}>
                 <Row className="mb-3">
                     <Form.Group as={Col} md="12">
-                        <Form.Label>Nombre del producto</Form.Label>
+                        <Form.Label>Nombre de la habitación</Form.Label>
                         <Form.Control
                             type="text"
-                            placeholder="Producto"
+                            placeholder="Habitación"
                             name="nombre"
                             onChange={formik.handleChange}
                             value={formik.values.nombre}
@@ -59,33 +73,33 @@ export function Productos() {
                 </Row>
                 <Row className="mb-3">
                     <Form.Group as={Col} md="3">
-                        <Form.Label>Precio</Form.Label>
+                        <Form.Label>Costo</Form.Label>
                         <Form.Control
                             type="number"
                             name="precio"
-                            placeholder="Precio"
+                            placeholder="Costo"
                             value={formik.values.precio}
                             onChange={formik.handleChange}
                         />
                     </Form.Group>
                     <Form.Group as={Col} md="3">
-                        <Form.Label>Cantidad</Form.Label>
+                        <Form.Label>Fecha de estancia</Form.Label>
                         <InputGroup>
                             <Form.Control
-                                type="number"
+                                type="text"
                                 name="cantidad"
-                                placeholder="Cantidad"
+                                placeholder="Fecha"
                                 value={formik.values.cantidad}
                                 onChange={formik.handleChange}
                             />
                         </InputGroup>
                     </Form.Group>
                     <Form.Group as={Col} md="3">
-                        <Form.Label>Unidad</Form.Label>
+                        <Form.Label>Servicios extra</Form.Label>
                         <Form.Control
                             type="text"
                             name="unidad"
-                            placeholder="Unidad"
+                            placeholder="Servicios"
                             value={formik.values.unidad}
                             onChange={formik.handleChange}
                         />
@@ -94,9 +108,9 @@ export function Productos() {
                         <Form.Label>Imagen</Form.Label>
                         <Form.Control
                             type="file"
-                            name="imagen"
+                            name="imagep"
                             onChange={(event) =>
-                                formik.setFieldValue("imagen", event.currentTarget.files[0])
+                                formik.setFieldValue("imagep", event.currentTarget.files[0])
                             }
                         />
                     </Form.Group>
@@ -106,7 +120,11 @@ export function Productos() {
             </Form>
 
             <Row>
-                <AdministradorProductosTable productos={listaProductos} onDelete={handleDelete} />
+                <AdministradorProductosTable
+                    productos={listaProductos}
+                    onDelete={handleDelete}
+                    onUpdate={handleUpdate}
+                />
             </Row>
         </div>
     );

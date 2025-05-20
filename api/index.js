@@ -10,7 +10,6 @@ const {
 
 const port = process.env.PORT || 4000;
 
-// Conexión al gestor de base de datos
 const uri =  `mongodb://${IP_SERVER}:${DB_PORT}/${DB_NAME}`;
 mongoose.set('strictQuery', false);
 mongoose.connect(uri)

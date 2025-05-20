@@ -4,7 +4,7 @@ import Axios from "axios";
 
 export class Producto {
 
-    baseApi = ENV.BASE_API;
+    baseApi = "http://localhost:4000/api/";
 
     async createProduct(data,) {
         try {
@@ -36,15 +36,14 @@ export class Producto {
     return result; */
 
 
-
     async getProducto() {
         try {
             const url = `${this.baseApi}/${ENV.API_ROUTES.GETPRODUCTO}`;
             const response = await Axios.get(url);
-            return response.data; // ✅ Devuelve los productos correctamente
+            return response.data;
         } catch (err) {
             console.error("Error al obtener productos:", err);
-            return []; // ✅ Devuelve un array vacío en caso de error
+            return [];
         }
     }
     async deleteProducto(productId) {
@@ -54,6 +53,24 @@ export class Producto {
             console.log("Producto eliminado correctamente");
         } catch (error) {
             console.error("Error al eliminar producto:", error);
+        }
+    }
+
+    async updateProducto(productId, data) {
+        try {
+            const formData = new FormData();
+            Object.keys(data).forEach((key) => {
+                formData.append(key, data[key]);
+            });
+
+            const url = `${this.baseApi}${ENV.API_ROUTES.UPDATEPRODUCTO}/${productId}`;
+            await Axios.patch(url, formData, {
+                headers: { "Content-Type": "multipart/form-data" },
+            });
+
+            console.log("Producto actualizado correctamente");
+        } catch (error) {
+            console.error("Error al actualizar producto:", error);
         }
     }
 }

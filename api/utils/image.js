@@ -1,9 +1,13 @@
 function getfilePath (file){
     const filePath = file.path;
     const fileSplit = filePath.split("\\");
-    return `${fileSplit[0]}/${fileSplit[1]}`
+    const uploadsIndex = fileSplit.indexOf("uploads"); 
+    if (uploadsIndex !== -1) {
+        return fileSplit.slice(uploadsIndex).join("/");
+    }
+    return filePath; 
 }
 
 module.exports={
-    getfilePath
-}
+    getfilePath,
+};
