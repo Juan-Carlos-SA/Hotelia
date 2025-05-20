@@ -10,8 +10,8 @@
     border-radius: 0.7rem;
     
     box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.606);
-    margin-top: 50px;
-    margin-left: 1100px;
+    margin-top: 180px;
+    margin-left: 1000px;
 }
 .Servicio-card:hover {
     transform: scale(1.1); /* Aumenta el tamaño al pasar el mouse */

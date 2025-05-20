@@ -104,7 +104,7 @@ export function AdministradorProductosTable({ productos = [], onDelete, onUpdate
                             <Form.Group>
                                 <Form.Label>Fecha de estancia</Form.Label>
                                 <Form.Control
-                                    type="text"
+                                    type="number"
                                     name="Fecha"
                                     value={productoSeleccionado.cantidad || ""}
                                     onChange={handleChange}
